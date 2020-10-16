@@ -1,0 +1,305 @@
+﻿{
+	"destination": "detailScreen",
+	"windowSizingX": "variable",
+	"windowSizingY": "variable",
+	"width": 920,
+	"height": 720,
+	"menuBar": "Menu Bar #1",
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onPageChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "842pt",
+		"paperHeight": "595pt"
+	},
+	"pages": [
+		{
+			"objects": {
+				"Tab Control": {
+					"type": "tab",
+					"top": 22,
+					"left": 23,
+					"width": 879,
+					"height": 679,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"dataSource": "_TabTitles",
+					"dataSourceTypeHint": "arrayText",
+					"fontFamily": "Segoe UI",
+					"fontSize": 14,
+					"action": "gotoPage",
+					"events": [
+						"onClick"
+					]
+				}
+			}
+		},
+		{
+			"objects": {
+				"information": {
+					"type": "input",
+					"top": 119,
+					"left": 51,
+					"width": 828,
+					"height": 560,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"dataSource": "Infos[0].Description",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					],
+					"method": "ObjectMethods/information.4dm"
+				}
+			},
+			"entryOrder": []
+		},
+		{
+			"objects": {
+				"information2": {
+					"type": "input",
+					"top": 59,
+					"left": 44,
+					"width": 828,
+					"height": 64,
+					"sizingX": "grow",
+					"dataSource": "Infos[1].Description",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"ViewProArea": {
+					"type": "view",
+					"left": 35,
+					"top": 219,
+					"width": 852,
+					"height": 246,
+					"userInterface": "none",
+					"withFormulaBar": true,
+					"events": [
+						"onVPReady"
+					],
+					"method": "ObjectMethods/ViewProArea.4dm",
+					"sizingX": "grow",
+					"sizingY": "grow"
+				},
+				"Event details": {
+					"type": "listbox",
+					"left": 35,
+					"top": 506,
+					"width": 192,
+					"height": 181,
+					"events": [
+						"onClick",
+						"onHeaderClick",
+						"onDataChange",
+						"onSelectionChange"
+					],
+					"dataSource": "Form:C1466.EventList",
+					"listboxType": "collection",
+					"scrollbarHorizontal": "automatic",
+					"scrollbarVertical": "automatic",
+					"sizingY": "grow",
+					"selectionMode": "single",
+					"hideSystemHighlight": false,
+					"metaSource": "LastRowStyle ",
+					"sizingX": "fixed",
+					"columns": [
+						{
+							"header": {
+								"text": "Num",
+								"name": "Entête2"
+							},
+							"name": "Num",
+							"footer": {
+								"name": "Pied2"
+							},
+							"dataSource": "This:C1470.num",
+							"width": 63,
+							"enterable": false,
+							"textAlign": "center"
+						},
+						{
+							"header": {
+								"text": "Event description",
+								"name": "Entête1"
+							},
+							"name": "Event",
+							"footer": {
+								"name": "Pied1"
+							},
+							"dataSource": "This:C1470.description",
+							"width": 128,
+							"enterable": false
+						}
+					]
+				},
+				"Text": {
+					"type": "text",
+					"text": "Events details:\r",
+					"top": 484,
+					"left": 35,
+					"width": 236,
+					"height": 15,
+					"fontWeight": "bold",
+					"sizingY": "fixed"
+				},
+				"Splitter": {
+					"type": "splitter",
+					"left": 24,
+					"top": 475,
+					"width": 873,
+					"height": 9,
+					"sizingX": "grow",
+					"sizingY": "move"
+				},
+				"Check Box": {
+					"type": "checkbox",
+					"text": "On Clicked",
+					"top": 115,
+					"left": 55,
+					"width": 172,
+					"height": 31,
+					"events": [
+						"onClick"
+					],
+					"dataSourceTypeHint": "boolean",
+					"method": "ObjectMethods/Check Box.4dm",
+					"dataSource": "Form:C1466.onClicked"
+				},
+				"Check Box1": {
+					"type": "checkbox",
+					"text": "On Header Click",
+					"top": 148,
+					"left": 55,
+					"width": 172,
+					"height": 31,
+					"events": [
+						"onClick"
+					],
+					"dataSourceTypeHint": "boolean",
+					"method": "ObjectMethods/Check Box1.4dm",
+					"dataSource": "Form:C1466.onHeaderClick"
+				},
+				"Check Box2": {
+					"type": "checkbox",
+					"text": "On Double Clicked",
+					"top": 181,
+					"left": 55,
+					"width": 172,
+					"height": 31,
+					"events": [
+						"onClick"
+					],
+					"dataSourceTypeHint": "boolean",
+					"method": "ObjectMethods/Check Box2.4dm",
+					"dataSource": "Form:C1466.onDoubleClicked"
+				},
+				"Check Box3": {
+					"type": "checkbox",
+					"text": "On Column Resize",
+					"top": 115,
+					"left": 323,
+					"width": 172,
+					"height": 31,
+					"events": [
+						"onClick"
+					],
+					"dataSourceTypeHint": "boolean",
+					"method": "ObjectMethods/Check Box3.4dm",
+					"dataSource": "Form:C1466.onColumnResize"
+				},
+				"Check Box4": {
+					"type": "checkbox",
+					"text": "On Row Resize",
+					"top": 146,
+					"left": 323,
+					"width": 172,
+					"height": 31,
+					"events": [
+						"onClick"
+					],
+					"dataSourceTypeHint": "boolean",
+					"method": "ObjectMethods/Check Box4.4dm",
+					"dataSource": "Form:C1466.onRowResize"
+				},
+				"Check Box5": {
+					"type": "checkbox",
+					"text": "On Selection Change",
+					"top": 176,
+					"left": 323,
+					"width": 172,
+					"height": 36,
+					"events": [
+						"onClick"
+					],
+					"dataSourceTypeHint": "boolean",
+					"method": "ObjectMethods/Check Box5.4dm",
+					"dataSource": "Form:C1466.onSelectionChange"
+				},
+				"Check Box6": {
+					"type": "checkbox",
+					"text": "On After Edit",
+					"top": 115,
+					"left": 658,
+					"width": 172,
+					"height": 31,
+					"events": [
+						"onClick"
+					],
+					"dataSourceTypeHint": "boolean",
+					"method": "ObjectMethods/Check Box6.4dm",
+					"dataSource": "Form:C1466.onAfterEdit"
+				},
+				"Button": {
+					"type": "button",
+					"text": "Reset",
+					"top": 181,
+					"left": 658,
+					"width": 94,
+					"height": 23,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button.4dm"
+				},
+				"Input": {
+					"type": "input",
+					"left": 236,
+					"top": 506,
+					"width": 651,
+					"height": 181,
+					"dataSource": "JSON Stringify:C1217(Form:C1466.EventList;*)",
+					"sizingX": "grow",
+					"sizingY": "grow"
+				}
+			}
+		}
+	],
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	}
+}
